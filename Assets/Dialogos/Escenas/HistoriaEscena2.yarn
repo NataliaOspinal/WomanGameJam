@@ -3,6 +3,8 @@
 // ESCENA 2 - EN LA CASA
 // Requiere $contadorSi declarada en la escena 1 (ver nota aparte).
 // $usoVestido recuerda SOLO esta decisión (la escena 3 la necesita).
+<<cambiar_fondo FondoManager 1 1>>
+
 <<declare $usoVestido = false>>
 
 // Sonido de puerta abriéndose y cerrándose (índice 5, ajústalo a tu lista)
@@ -131,6 +133,7 @@ NOELIA: No es que se me vean mejor las pompis…
 NOELIA: Es que se me van a ver, punto.
 
 -> Me pondré el vestido
+    <<cambiar_fondo FondoManager 3 1>>
     <<set $contadorSi += 1>>
     <<set $usoVestido = true>>
     // Se observa a NOELIA en el espejo, con un vestido pegado y claramente incómoda.
@@ -141,6 +144,7 @@ NOELIA: Es que se me van a ver, punto.
 -> Me vestiré como quiero
     // No suma al contador
     // Se observa a NOELIA en el espejo, con unos jeans y top.
+    <<cambiar_fondo FondoManager 2 1>>
     NOELIA: Me siento más cómoda así.
     NOELIA: Ya de por sí he tenido un día muy fuerte…
     NOELIA: Si encima voy incómoda, la voy a pasar mal.

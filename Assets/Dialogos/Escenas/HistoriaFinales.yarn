@@ -17,6 +17,7 @@ NOELIA: Es bien dulce…
 // PASA UN RATO. LA PANTALLA SE PONE OSCURA EN LOS BORDES (viñeta)
 // bum… bum… bum… la música se vuelve sorda y distorsionada, como bajo el agua
 <<detener_sonidos AudioYarnManager 0.5>>
+<<cambiar_fondo FondoManager 6 1>>
 <<reproducir_sonido AudioYarnManager 6 10 true 2>>
 
 NOELIA: Qué calor…
@@ -126,6 +127,8 @@ NOELIA: Si es algo que me incomoda, es no.
 YESSICA: ¡Pues si tanto te incomoda, vete entonces!
 
 NOELIA: … eso voy a hacer.
+
+<<cambiar_fondo FondoManager 7 1>>
 
 // Noelia se va: Yago sale de escena
 <<personaje_salir Hombre1 0.4>>
@@ -263,6 +266,8 @@ title: Final_3
 <<personaje_salir Hombre1 0>>
 <<personaje_salir Hombre2 0>>
 
+<<cambiar_fondo FondoManager 8 1>>
+
 // puerta de taxi
 <<reproducir_sonido AudioYarnManager 7 1>>
 // carro alejándose
@@ -304,4 +309,5 @@ NOELIA: No sé qué decir…
 
 // FINAL: NO SÉ QUÉ DECIR
 
+<<fundido_desde_negro FondoManager 10>>
 ===

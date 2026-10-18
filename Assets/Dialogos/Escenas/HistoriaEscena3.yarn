@@ -4,6 +4,8 @@ title: Escena3
 <<declare $aceptoTrago = false>>
 // Sprites: Hombre1 = YAGO, Hombre2 = SIMÓN
 
+<<cambiar_fondo FondoManager 4 4>>
+
 // música de club a todo volumen
 <<reproducir_sonido AudioYarnManager 6 15 true 1>>
 
@@ -122,6 +124,7 @@ NOELIA: Salud.
 
 // musica
 <<detener_sonidos AudioYarnManager 0.5>>
+<<cambiar_fondo FondoManager 5 1>>
 <<reproducir_sonido AudioYarnManager 11 20 true 1>>
 
 YESSICA: ¡Ay, quiero bailar!

@@ -133,30 +133,19 @@ NOELIA: Es que se me van a ver, punto.
 -> Me pondré el vestido
     <<set $contadorSi += 1>>
     <<set $usoVestido = true>>
-
     // Se observa a NOELIA en el espejo, con un vestido pegado y claramente incómoda.
     NOELIA: Se me ve media chichi y media nalga…
-
     NOELIA: Pero bueno…
-
     NOELIA: Igual es el vestido que me regaló Yessi.
-
     NOELIA: Es algo incómodo, pero si me lo ve puesto se pondrá feliz.
-
 -> Me vestiré como quiero
     // No suma al contador
-
     // Se observa a NOELIA en el espejo, con unos jeans y top.
     NOELIA: Me siento más cómoda así.
-
     NOELIA: Ya de por sí he tenido un día muy fuerte…
-
     NOELIA: Si encima voy incómoda, la voy a pasar mal.
-
     NOELIA: Y la verdad tampoco es que me guste mucho ese vestido…
-
     NOELIA: Es más del estilo de Yessi.
-
     NOELIA: Solo que nunca le he querido decir para que no se sienta mal.
 
 NOELIA: Ya estoy lista, ya voy saliendo.

@@ -1,5 +1,8 @@
 title: Escena3
 ---
+// $aceptoTrago recuerda SOLO la última decisión
+<<declare $aceptoTrago = false>>
+// Sprites: Hombre1 = YAGO, Hombre2 = SIMÓN
 
 // música de club a todo volumen
 <<reproducir_sonido AudioYarnManager 6 15 true 1>>
@@ -75,8 +78,10 @@ YESSICA: ¡LIIIIIIIIIA! ¡ACÁ!
     YESSICA: Ya, ya. Igual ya estás aquí.
 <<endif>>
 
-// Pasos
-<<reproducir_sonido AudioYarnManager 9 3>>
+// Pasos (de fondo, para que los chicos entren mientras suenan)
+<<reproducir_sonido AudioYarnManager 9 3 true>>
+<<personaje_entrar Hombre1 0.4 false>>
+<<personaje_entrar Hombre2 0.4>>
 
 YESSICA: ¡Chicos! ¡Les presento a Lia!
 
@@ -123,6 +128,9 @@ YESSICA: ¡Ay, quiero bailar!
 
 YESSICA: Vení Simón, ¡vamos a bailar!
 
+// Simón se va a bailar con Yessica
+<<personaje_salir Hombre2 0.4>>
+
 YAGO: ¿Y tú no bailas?
 
 NOELIA: No mucho, la verdad.
@@ -132,34 +140,20 @@ YAGO: ¡Dale, si no sabes yo te enseño!
 // Estas opciones no aportan puntos de sí/no
 -> Un ratito…
     NOELIA: … Solo un ratito.
-
     // TRANSICIÓN CORTITA
-
     NOELIA: ¡¿?!
-
     NOELIA: Me está agarrando de la cintura…
-
     NOELIA: Eh… ya, ya. Mejor me siento.
-
     YAGO: ¿Pero que fue?
-
     YAGO: ¿Te molestaste?
-
     NOELIA: Sí…
-
     NOELIA: No, sólo estoy cansada ya…
-
 -> No, gracias
     NOELIA: No, gracias. No tengo ganas.
-
     YAGO: ¡Pero si todos están bailando!
-
     YAGO: Hasta Yessica está bailando.
-
     NOELIA: Sí… pero estoy cansada.
-
     NOELIA: Me dieron palo en el trabajo.
-
     NOELIA: Además no quiero…
 
 YAGO: Ya, cansada pues…
@@ -205,7 +199,12 @@ YESSICA: ¡Son dos segunditos nomás!
 
 YESSICA: ¡Yago, cuídamela, ¿ok?!
 
+// Simón vuelve un instante y se va a la barra
+<<personaje_entrar Hombre2 0.3>>
+
 SIMÓN: Yo voy a la barra.
+
+<<personaje_salir Hombre2 0.3>>
 
 // TAP-TAP-TAP-TAP - pasos apurados
 <<reproducir_sonido AudioYarnManager 12 1.5>>
@@ -214,8 +213,11 @@ YAGO: Espérame un momento.
 
 YAGO: Ya vengo…
 
+<<personaje_salir Hombre1 0.3>>
+
 // TAP TAP TAP - pasos normales
-<<reproducir_sonido AudioYarnManager 9 1>>
+<<reproducir_sonido AudioYarnManager 9 1 true>>
+<<personaje_entrar Hombre1 0.4>>
 
 YAGO: Toma. Es para ti.
 
@@ -261,27 +263,27 @@ YAGO: ¿Entonces? Es un traguito…
 
 -> Aceptar el trago
     <<set $contadorSi += 1>>
+    <<set $aceptoTrago = true>>
     <<jump Escena3_Finales>>
-
 -> Rechazar el trago
     // Suma 0 al contador (el "NO" es no sumar).
+    <<set $aceptoTrago = false>>
     <<jump Escena3_Finales>>
 
 ===
 
 title: Escena3_Finales
 ---
-// Elige el final según los "sí" acumulados (escena 1 + 2 + 3 = de 0 a 3).
-<<detener_sonidos AudioYarnManager 1>>
-
-<<if $contadorSi >= 3>>
-    <<jump Final_3>>
-<<elseif $contadorSi == 2>>
-    <<jump Final_2>>
-<<elseif $contadorSi == 1>>
+// Rutas según los "sí" acumulados (escena 1 + 2 + 3 = de 0 a 3):
+//   SÍ + SÍ + SÍ (3)  = FINAL 1
+//   NO + NO + NO (0)  = FINAL 2
+//   cualquier mezcla  = FINAL 3 (dentro usa $aceptoTrago)
+<<if $contadorSi == 3>>
     <<jump Final_1>>
+<<elseif $contadorSi == 0>>
+    <<jump Final_2>>
 <<else>>
-    <<jump Final_0>>
+    <<jump Final_3>>
 <<endif>>
 
 ===

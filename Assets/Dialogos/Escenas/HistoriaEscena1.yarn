@@ -78,12 +78,9 @@ NOELIA: Bueno…
 
 -> Si quisiera...
     NOELIA: Si quisiera...
-
     NOELIA: Pero tengo que quedarme a trabajar.
-
 -> No sé...
     NOELIA: No creo que sea buena idea hoy.
-
     NOELIA: Tengo que quedarme a trabajar.
 
 YESSICA: ¿Pero no sales ya?
@@ -138,7 +135,6 @@ NOELIA: Nghhh…
 
 -> ¡Sí, me voy!
     <<jump Escena1_Si>>
-
 -> ¡No, ya basta!
     <<jump Escena1_No>>
 
@@ -188,6 +184,8 @@ YESSICA: Ya vas a ver que la vamos a pasar divino~
 
 YESSICA: No te vas a arrepentir~
 
+<<jump Escena2>>
+
 ===
 
 title: Escena1_No
@@ -219,6 +217,8 @@ NOELIA: ¡TENGO que quedarme!
 YESSICA: ...Bueno, en dos horas entonces.
 
 YESSICA: ¡Pero la próxima que me hables así no te invito a nada!
+
+<<personaje_salir Jefa 0.3>>
 
 <<jump Escena2>>
 

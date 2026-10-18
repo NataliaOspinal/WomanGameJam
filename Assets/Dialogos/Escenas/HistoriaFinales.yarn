@@ -1,0 +1,307 @@
+﻿title: Final_1
+---
+// FINAL 1 (SÓLO DI QUE SÍ) - SÍ + SÍ + SÍ
+// Índices de sonido NUEVOS (deben coincidir con tu array):
+//   16 beber (glup)   17 música distorsionada/bajo el agua   18 música siniestra
+//   19 vidrio rompiéndose   20 carro alejándose
+
+NOELIA: … Está bien. Sólo uno.
+
+YAGO: ¡Esooo!
+
+// GLUP… GLUP… sonidos de beber
+<<reproducir_sonido AudioYarnManager 14 1>>
+
+NOELIA: Es bien dulce…
+
+// PASA UN RATO. LA PANTALLA SE PONE OSCURA EN LOS BORDES (viñeta)
+// bum… bum… bum… la música se vuelve sorda y distorsionada, como bajo el agua
+<<detener_sonidos AudioYarnManager 0.5>>
+<<reproducir_sonido AudioYarnManager 6 10 true 2>>
+
+NOELIA: Qué calor…
+
+NOELIA: Todo me da vueltas.
+
+NOELIA: Tengo miedo…
+
+NOELIA: Yessi… Yessi…
+
+YAGO: Yessi… Noelia se puso mal de repente.
+
+YAGO: Se pidió un trago y se puso así.
+
+YESSICA: ¡Ja, ja! Ay, noooooo~
+
+YESSICA: No sé para qué hizo eso.
+
+YESSICA: A Lia le cae malazo el trago.
+
+YESSICA: Mejor le pido un taxi.
+
+YAGO: No hace falta. Yo la llevo.
+
+YAGO: Sólo dame su dirección.
+
+YESSICA: ¡Ah! ¿Seguro?
+
+YESSICA: ¿Y te quitas tan pronto?
+
+YAGO: Sí… es que igual ya me tenía que ir.
+
+YESSICA: Ah, bueno…
+
+YESSICA: Ya. Mira, es en…
+
+// Música siniestra para dar la idea de que esto es muy malo
+<<reproducir_sonido AudioYarnManager 13 10 true 2>>
+
+NOELIA: Yessi… no…
+
+// FINAL 1: SÓLO DI QUE SÍ (aquí va tu tarjeta de título / fade a negro)
+
+===
+
+title: Final_2
+---
+// FINAL 2 (HE DICHO QUE NO) - NO + NO + NO
+
+NOELIA: ¡QUE NO QUIERO!
+
+NOELIA: ¡¿Cuántas veces te tengo que decir para que entiendas?!
+
+YAGO: Hey… ya, tranquila.
+
+YAGO: ¿Por qué te pones así?
+
+YAGO: Sólo quería que te relajaras un poco.
+
+NOELIA: ¡¿Cómo me voy a relajar si llevas toda la noche de encimoso y no me dejas en paz!?
+
+NOELIA: ¡Y a saber de dónde sacaste ese trago!
+
+// TAPTAPTAPTAPTAP - pasos rápidos
+<<reproducir_sonido AudioYarnManager 12 2 true>>
+
+YESSICA: ¡¿Pero cuál es el escándalo?!
+
+YESSICA: ¡Noelia! ¡¿Qué te pasa?!
+
+NOELIA: ¡Tu colega acá ha estado de raro conmigo toda la noche!
+
+NOELIA: ¡Le digo que no quiero beber y se pone de insistente!
+
+YESSICA: Ay, Noelia…
+
+YESSICA: Es que tú no estás acostumbrada a salir.
+
+YESSICA: Y menos con hombres.
+
+YESSICA: Por eso no tienes novio…
+
+NOELIA: …
+
+NOELIA: ¿Ah si?
+
+NOELIA: ¿Es culpa mía?
+
+NOELIA: ¡Llevo todo el día incómoda, Yessica!
+
+NOELIA: ¡Primero casi me metes en problemas con el trabajo por tus llamadas!
+
+NOELIA: ¡Después, con el tema del vestido que sabes que no me queda!
+
+NOELIA: ¡Y ahora te pones a defender a este tipo que ni conozco y no me ha dejado en paz en toda la noche!
+
+YESSICA: ¡Es que tú le dices que no a todo!
+
+YESSICA: ¡Para qué te invito si contigo es siempre un no!
+
+NOELIA: …
+
+NOELIA: Pues es verdad…
+
+NOELIA: Si es algo que me incomoda, es no.
+
+YESSICA: ¡Pues si tanto te incomoda, vete entonces!
+
+NOELIA: … eso voy a hacer.
+
+// Noelia se va: Yago sale de escena
+<<personaje_salir Hombre1 0.4>>
+
+// BIP! sonido de teléfono
+<<reproducir_sonido AudioYarnManager 2 1.5>>
+
+NOELIA: Probablemente Yessi ya no quiera hablarme después de esto…
+
+NOELIA: Pero siento que ya era inevitable.
+
+NOELIA: Yessi y yo somos muy diferentes.
+
+NOELIA: Y de acá a un tiempo siento que ya ella no me escuchaba.
+
+NOELIA: Y ya estoy cansada.
+
+NOELIA: De decirle que sí a cosas que no me gustan y me incomodan.
+
+NOELIA: Sólo para complacerla.
+
+NOELIA: Ya no…
+
+NOELIA: Ya no quiero tomar decisiones sólo para que otros estén felices.
+
+// FINAL 2: HE DICHO QUE NO (aquí va tu tarjeta de título / fade a negro)
+
+===
+
+title: Final_3
+---
+// FINAL 3 (NO SÉ QUÉ DECIR) - combinación de SÍ y NO
+// Depende de la última decisión de la escena 3 ($aceptoTrago).
+
+<<if $aceptoTrago>>
+    // VARIANTE SÍ - ACEPTASTE EL TRAGO
+    NOELIA: … Está bien. Sólo uno.
+
+    YAGO: ¡Esooo!
+
+    // GLUP - sonido de beber
+    <<reproducir_sonido AudioYarnManager 14 2>>
+
+    NOELIA: Qué sabor tan raro…
+
+    NOELIA: !!!
+
+    NOELIA: N-no…
+
+    // ¡CRASH! sonido de vidrio rompiéndose
+    <<reproducir_sonido AudioYarnManager 15 1>>
+
+    NOELIA: ¡P-perdón! Se me resbaló…
+
+    YAGO: … Ay qué torpe.
+
+    YAGO: Ya, ya. Te pido otro.
+
+    NOELIA: No, no…
+
+    NOELIA: Estoy bien así.
+
+    NOELIA: De verdad.
+
+    YAGO: …
+
+    // TAP TAP TAP TAP - pasos
+    <<reproducir_sonido AudioYarnManager 9 2>>
+
+    YESSICA: ¡Ya volví!
+
+    YESSICA: ¡Ay! ¿Y este vidrio?
+
+    YESSICA: ¿Qué pasó?
+
+    YAGO: No, nada.
+
+    YAGO: Le invité un trago a Noelia pero se le cayó.
+
+    YAGO: Y le quise comprar otro, pero no quiere.
+
+    YESSICA: ¿Te cortaste, Lia?
+
+    NOELIA: No, no. Estoy bien.
+
+    YESSICA: Quizás mejor que no tomes.
+
+    YESSICA: No tienes mucha resistencia igual.
+
+    NOELIA: Sí… mejor.
+<<else>>
+    // VARIANTE - RECHAZASTE EL TRAGO
+    NOELIA: No, gracias.
+
+    YAGO: Ay vamos. Sólo un traguito.
+
+    NOELIA: En verdad, no quiero…
+
+    YAGO: ¿Por qué? ¿No te gusta?
+
+    NOELIA: … Es que mañana tengo cosas que hacer.
+
+    NOELIA: Y no tomo mucho.
+
+    YAGO: Ya, ya entendí el mensaje.
+
+    // TAP TAP TAP TAP - pasos acercándose
+    <<reproducir_sonido AudioYarnManager 9 2 true>>
+    <<personaje_entrar Hombre2 0.3>>
+
+    YESSICA: ¡Ya volví! ¿Qué fue?
+
+    YAGO: Nada. Le ofrecí un trago a Noelia, pero no quiso.
+
+    SIMÓN: ¡Qué lástima!
+
+    NOELIA: …
+
+    YESSICA: ¡Ja, ja! Ay, es normal~
+
+    YESSICA: Lia no bebe mucho y le cae pesado.
+
+    NOELIA: Sí… eso.
+
+    NOELIA: No estoy cómoda.
+
+    NOELIA: Pero tampoco me voy.
+
+    NOELIA: Un ratito más… y otro ratito más…
+<<endif>>
+
+// FADE OUT Y FADE IN RÁPIDO PARA REPRESENTAR EL PASO DEL TIEMPO
+// Mientras la pantalla está en negro, los chicos ya se fueron (duración 0 = instantáneo).
+// Si un personaje no está en pantalla, el comando no hace nada.
+<<personaje_salir Hombre1 0>>
+<<personaje_salir Hombre2 0>>
+
+// puerta de taxi
+<<reproducir_sonido AudioYarnManager 7 1>>
+// carro alejándose
+<<reproducir_sonido AudioYarnManager 16 3 true 1>>
+
+YESSICA: ¡Gracias por venir, chicos!
+
+NOELIA: …
+
+NOELIA: Por fin.
+
+NOELIA: Qué alivio.
+
+YESSICA: Tú también gracias por venir Lia~
+
+YESSICA: La pasé buenísimo. Espero que tú también.
+
+NOELIA: Sí… la pasé bien.
+
+YESSICA: La próxima te vuelvo a invitar, ¿ya?
+
+YESSICA: Sales muy poco.
+
+YESSICA: Tienes que socializar más.
+
+YESSICA: ¡Además, mira lo bien que les caíste a los chicos!
+
+NOELIA: Sí… claro.
+
+NOELIA: Quizá debería decirle a Yessi lo que en verdad siento.
+
+NOELIA: Pero no digo nada…
+
+NOELIA: Yessi es mi amiga y no quiero que se sienta mal.
+
+NOELIA: Si me vuelve a invitar, pues…
+
+NOELIA: No sé qué decir…
+
+// FINAL: NO SÉ QUÉ DECIR
+
+===

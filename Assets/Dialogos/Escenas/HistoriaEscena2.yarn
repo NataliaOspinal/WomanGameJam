@@ -1,0 +1,180 @@
+﻿title: Escena2
+---
+// ESCENA 2 - EN LA CASA
+// Requiere $contadorSi declarada en la escena 1 (ver nota aparte).
+// $usoVestido recuerda SOLO esta decisión (la escena 3 la necesita).
+<<declare $usoVestido = false>>
+
+// Sonido de puerta abriéndose y cerrándose (índice 5, ajústalo a tu lista)
+<<reproducir_sonido AudioYarnManager 4 2>>
+
+NOELIA: … Ya llegué a casa.
+
+NOELIA: Mejor será que me cambie pronto.
+
+// Variación según la decisión anterior
+<<if $contadorSi >= 1>>
+    // Respondió SÍ en la escena anterior
+    NOELIA: Tremendo problema en el que me he metido en el trabajo…
+
+    NOELIA: A lo mejor me dejan compensar lo faltante el Lunes.
+
+    NOELIA: O a lo peor me botan…
+
+    NOELIA: *Suspiro*
+
+    NOELIA: Ya igual el daño está hecho.
+<<else>>
+    // Respondió NO en la escena anterior
+    NOELIA: En verdad no quería mal contestarle así.
+
+    NOELIA: Pero me tenía desesperada entre ella y la supervisora…
+
+    NOELIA: Voy a llamar a Yessica para avisarle que ya estoy por vestirme y salir.
+<<endif>>
+
+// Sonido de llamada (índice 6, ajústalo a tu lista)
+<<reproducir_sonido AudioYarnManager 2 2>>
+<<reproducir_sonido AudioYarnManager 3 0.5>>
+
+NOELIA: Hey Yessi. Ya llegué a casa.
+
+NOELIA: Me visto de una y salgo.
+
+YESSICA: ¡Bien!
+
+YESSICA: Yo ya estoy en el lugar.
+
+YESSICA: Te paso la dirección por chat.
+
+YESSICA: No te dije antes pero…
+
+YESSICA: ¡Vamos al Todo o Nada esta noche!
+
+NOELIA: Noooo. ¿Por qué un antro? Noooooo.
+
+NOELIA: ¿No puede ser algo más tranquilo?
+
+NOELIA: Pensé que íbamos a un lugar más relajado nosotras.
+
+NOELIA: Y he tenido un día muy pesado…
+
+YESSICA: ¡Siempre nuestras salidas son así quietas!
+
+YESSICA: ¡Ya me aburren!
+
+NOELIA: Pensé que a las dos nos gustaban…
+
+YESSICA: Quería hacer algo especial esta noche.
+
+YESSICA: Ah…
+
+YESSICA: Por cierto…
+
+YESSICA: Se me olvidó avisarte, pero…
+
+YESSICA: Esta noche vendrán un par de compañeros de la oficina con nosotras~
+
+NOELIA: Yessi… Porfa no…
+
+YESSICA: ¡Ay, pero sí son buena gente!
+
+YESSICA: Y es mejor así si vamos en grupo.
+
+YESSICA: Y si queremos bailar ya tenemos pareja~
+
+NOELIA: Yessi, ya sabes que no me gusta bailar.
+
+NOELIA: No se me da bien.
+
+YESSICA: ¡Es porque nunca te das la oportunidad!
+
+YESSICA: Pero en serio, son muuuuy buena gente.
+
+NOELIA: …
+
+NOELIA: … Está bien.
+
+// Sonido de guardarropa deslizándose (índice 7, ajústalo a tu lista)
+<<reproducir_sonido AudioYarnManager 5 2>>
+
+YESSICA: Una cosa.
+
+YESSICA: Como hoy es una noche especial…
+
+YESSICA: En un sitio chévere…
+
+YESSICA: Con dos guapos de compañía…
+
+YESSICA: ¡Tienes que venir REGIA~!
+
+NOELIA: No sé, Yessi…
+
+NOELIA: No fui a hacer la lavandería, no tengo mucha ropa.
+
+YESSICA: ¿No tienes por ahí el vestido que te regalé para tu cumple?
+
+YESSICA: El que te hace ver toda sexy~
+
+YESSICA: ¡Ese te resalta bastante bien!
+
+NOELIA: No lo sé… no creo que me siga quedando.
+
+NOELIA: Y la verdad no me gusta ese tipo de ropa…
+
+YESSICA: Aaaandaaa~
+
+YESSICA: ¡Que igual mientras se te vean bien las pompis es lo que importa!
+
+NOELIA: No es que se me vean mejor las pompis…
+
+NOELIA: Es que se me van a ver, punto.
+
+-> Me pondré el vestido
+    <<set $contadorSi += 1>>
+    <<set $usoVestido = true>>
+
+    // Se observa a NOELIA en el espejo, con un vestido pegado y claramente incómoda.
+    NOELIA: Se me ve media chichi y media nalga…
+
+    NOELIA: Pero bueno…
+
+    NOELIA: Igual es el vestido que me regaló Yessi.
+
+    NOELIA: Es algo incómodo, pero si me lo ve puesto se pondrá feliz.
+
+-> Me vestiré como quiero
+    // No suma al contador
+
+    // Se observa a NOELIA en el espejo, con unos jeans y top.
+    NOELIA: Me siento más cómoda así.
+
+    NOELIA: Ya de por sí he tenido un día muy fuerte…
+
+    NOELIA: Si encima voy incómoda, la voy a pasar mal.
+
+    NOELIA: Y la verdad tampoco es que me guste mucho ese vestido…
+
+    NOELIA: Es más del estilo de Yessi.
+
+    NOELIA: Solo que nunca le he querido decir para que no se sienta mal.
+
+NOELIA: Ya estoy lista, ya voy saliendo.
+
+YESSICA: ¡Ok~!
+
+YESSICA: Ya yo estoy aquí con los muchachos.
+
+YESSICA: Les hablé un poco de ti y tienen muchas ganas de conocerte.
+
+NOELIA: Sí… está bien.
+
+NOELIA: A saber qué les habrá dicho.
+
+NOELIA: Yessi puede ser un poco pasada de lanza a veces…
+
+NOELIA: Ya estoy pidiendo el taxi.
+
+<<jump Escena3>>
+
+===

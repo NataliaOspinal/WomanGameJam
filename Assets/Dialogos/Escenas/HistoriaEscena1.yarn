@@ -1,0 +1,225 @@
+﻿title: Start
+---
+<<declare $contadorSi = 0>>
+
+<<reproducir_sonido AudioYarnManager 0 4>>
+
+<<reproducir_sonido AudioYarnManager 1 0.5>>
+
+NOELIA: *Suspiro*
+
+NOELIA: Qué fastidio…
+
+NOELIA: No me quería quedar en la oficina tan tarde hoy, y encima un viernes…
+
+NOELIA: NO QUIERO ESTAR AQUIIIIIIIIIII
+
+NOELIA: Pero tengo que hacerlo… 
+
+NOELIA: Las cosas en el trabajo han estado pesadísimas esta semana. 
+
+NOELIA: Ya hicieron que todo el mundo se comprometiera a quedarse horas extra esta semana.
+
+NOELIA: Al menos nos dan la cena y el taxi…
+
+NOELIA: PERO QUE ABURRIMIENTO
+
+NOELIA: *Suspiro*
+
+<<reproducir_sonido AudioYarnManager 1 0.8>>
+<<reproducir_sonido AudioYarnManager 2 10 true>>
+
+NOELIA: … Es Yessica.
+
+NOELIA: ¿Para qué me llama a esta hora?
+
+NOELIA: Ella sabe que a esta hora todavía estoy en el trabajo.
+
+NOELIA: … Bueno, mejor le respondo rapidito.
+
+NOELIA: Como la conozco, si no le respondo, ya no dejará de llamarme.
+
+NOELIA: Y quién quita si no es algo urgente.
+
+<<detener_sonidos AudioYarnManager 0.5>>
+<<reproducir_sonido AudioYarnManager 3 0.2>>
+
+NOELIA: ¿Yessica? ¿Qué pasó?
+
+YESSICA: NOLIIIIIIIII. ¡Por fin contestas!
+
+YESSICA: ¡Te dejé un montón de mensajes, pero no me respondes!
+
+NOELIA: Sabes que ahorita estoy en el trabajo.
+
+NOELIA: No he tenido ni tiempo de mirar el teléfono.
+
+NOELIA: Además, he estado re ocupada todo el día de hoy.
+
+YESSICA: Si, ajá. ¿Pero ya dentro de poco sales del trabajo no?
+
+YESSICA: ¡Hoy quiero salir a celebrar!
+
+YESSICA: ¡Me dieron un aumento!
+
+NOELIA: Felicidades, en serio.
+
+NOELIA: Pero ahorita no tengo mucho tiempo para hablar…
+
+NOELIA: ¿Si mejor hablamos después?
+
+YESSICA: ¿Pero no vas a salir ya?
+
+YESSICA: ¡Vamos, quiero que celebremos juntas!
+
+YESSICA: Hace tiempo que no salimos.
+
+NOELIA: Bueno…
+
+-> Si quisiera...
+    NOELIA: Si quisiera...
+
+    NOELIA: Pero tengo que quedarme a trabajar.
+
+-> No sé...
+    NOELIA: No creo que sea buena idea hoy.
+
+    NOELIA: Tengo que quedarme a trabajar.
+
+YESSICA: ¿Pero no sales ya?
+
+YESSICA: ¿Para qué te están haciendo quedar tan tarde?
+
+NOELIA: Hay mucho que hacer en la chamba.
+
+NOELIA: Hasta los jefes se están quedando tarde.
+
+YESSICA: Ajá, pero eso no es culpa tuya.
+
+YESSICA: ¿Para qué te hacen quedarte más tiempo?
+
+YESSICA: ¡Si se les acumuló el trabajo, es por su propia irresponsabilidad!
+
+NOELIA: Ya, ya, pero igual–
+
+<<personaje_entrar Jefa 0.3>>
+
+SUPERVISORA: Noelia, ¿ya terminaste los informes?
+
+NOELIA: !!!
+
+SUPERVISORA: ¿Qué haces en el teléfono?
+
+SUPERVISORA: ¿Ya terminaste los informes?
+
+NOELIA: Ah, n-no–
+
+SUPERVISORA: Estamos con el tiempo corto.
+
+SUPERVISORA: ¿Puedes, por favor, dejar el teléfono y terminar los informes?
+
+YESSICA: ¡Ay, que conchuda!
+
+NOELIA: ¡Shhh! ¡Yessica por favor!
+
+YESSICA: ¡Pero es que es muy grosera!
+
+YESSICA: ¡No te puede obligar a quedarte, tú tienes tus derechos!
+
+SUPERVISORA: Noelia…
+
+SUPERVISORA: Ya. Deja. El. Teléfono.
+
+SUPERVISORA: Y TERMINA el informe.
+
+YESSICA: ¡Noelia! ¡Vamos, ya quítate y vamos a salir!
+
+NOELIA: Nghhh…
+
+-> ¡Sí, me voy!
+    <<jump Escena1_Si>>
+
+-> ¡No, ya basta!
+    <<jump Escena1_No>>
+
+===
+
+title: Escena1_Si
+---
+<<set $contadorSi += 1>>
+
+NOELIA: ¡Ya, está bien! ¡Me voy!
+
+SUPERVISORA: ¡¿Cómo que te vas?!
+
+SUPERVISORA: ¡Se dijo que todos en la oficina se quedarían dos horas más!
+
+SUPERVISORA: ¡Y tú aún no has terminado!
+
+NOELIA: ¡Ya es la hora de salida, y tengo que irme ya!
+
+SUPERVISORA: Noelia…
+
+SUPERVISORA: Si te vas ahora, vamos a tener un serio problema.
+
+NOELIA: Si se. Perdón.
+
+NOELIA: Pero de verdad tengo que irme ya.
+
+NOELIA: El lunes compenso el trabajo, ¿sí?
+
+SUPERVISORA: Haz lo que quieras entonces.
+
+SUPERVISORA: Igual le estaré informando de tu falta a la administración.
+
+<<personaje_salir Jefa 0.3>>
+
+NOELIA: …
+
+NOELIA: Yessica, ya salí.
+
+NOELIA: Pero mira que sólo lo hago por tu ascenso.
+
+NOELIA: Que sea la última vez.
+
+YESSICA: ¡Ay, gracias Noelia!
+
+YESSICA: Ya vas a ver que la vamos a pasar divino~
+
+YESSICA: No te vas a arrepentir~
+
+===
+
+title: Escena1_No
+---
+NOELIA: ¡Yessica! ¡Voy a cortar!
+
+NOELIA: ¡Tengo que trabajar, respeta ya!
+
+YESSICA: ¡¿Pero por qué eres así conmigo?!
+
+YESSICA: ¡Te estoy invitando porque casi nunca salimos!
+
+NOELIA: ¡Si se!
+
+NOELIA: ¡Pero no puedo dejar el trabajo!
+
+NOELIA: ¡Ya me comprometí y tengo que terminar!
+
+NOELIA: Mira…
+
+NOELIA: Salgo en dos horas, en dos horas llego a la casa y voy.
+
+YESSICA: ¡Pero eso es muy tarde!
+
+NOELIA: ¡Pero es eso o nada!
+
+NOELIA: ¡TENGO que quedarme!
+
+YESSICA: ...Bueno, en dos horas entonces.
+
+YESSICA: ¡Pero la próxima que me hables así no te invito a nada!
+
+<<jump Escena2>>
+
+===

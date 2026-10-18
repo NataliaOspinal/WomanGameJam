@@ -1,0 +1,287 @@
+title: Escena3
+---
+
+// música de club a todo volumen
+<<reproducir_sonido AudioYarnManager 6 15 true 1>>
+
+// Puerta de taxi cerrándose
+<<reproducir_sonido AudioYarnManager 7 0.4>>
+
+NOELIA: Ya llegué.
+
+NOELIA: Se escucha la música desde la calle…
+
+NOELIA: Qué ganas de dormir.
+
+NOELIA: Pero Yessi me está esperando.
+
+NOELIA: Es mi amiga. Una de las pocas que me quedan.
+
+NOELIA: Hace siglos que no salgo…
+
+NOELIA: Mínimo me quedo un buen rato.
+
+// Música del club y gente festejando
+<<detener_sonidos AudioYarnManager 0.5>>
+<<reproducir_sonido AudioYarnManager 8 25 true 1>>
+
+YESSICA: ¡LIIIIIIIIIA! ¡ACÁ!
+
+<<if $usoVestido>>
+    // Variación: tienes el vestido puesto
+    YESSICA: ¡Llegaste por fin!
+
+    YESSICA: ¡Y mírate nomás!
+
+    YESSICA: ¡Estás REGIA y bella, amiga!
+
+    YESSICA: Te dije que te quedaba divino~
+
+    NOELIA: Ja, ja… gracias.
+
+    NOELIA: Siento que todo el mundo me está mirando.
+
+    NOELIA: Me jalo el borde del vestido, pero igual se me ve todo.
+
+    NOELIA: …
+
+    NOELIA: … Al menos Yessi está feliz.
+<<else>>
+    // Variación: NO tienes el vestido puesto
+    YESSICA: … Lia, ¿y el vestido?
+
+    NOELIA: Ah… Preferí esto para estar más cómoda.
+
+    NOELIA: No me sentía bien.
+
+    YESSICA: Te había dicho que el vestido se te veía mejor…
+
+    YESSICA: Y encima fue un regalo.
+
+    YESSICA: Pensé que te lo ibas a poner justo para una noche así…
+
+    NOELIA: No es eso, Yessi, es que–
+
+    YESSICA: No, no. Ya fue.
+
+    NOELIA: …
+
+    NOELIA: Es solo un vestido.
+
+    NOELIA: ¿Por qué me siento como si hubiera hecho algo malo?
+
+    NOELIA: Perdón, Yessi…
+
+    YESSICA: Ya, ya. Igual ya estás aquí.
+<<endif>>
+
+// Pasos
+<<reproducir_sonido AudioYarnManager 9 3>>
+
+YESSICA: ¡Chicos! ¡Les presento a Lia!
+
+YESSICA: Es la amiga de la que les hablé~
+
+YESSICA: Lia, ellos son Yago y Simón, del trabajo.
+
+SIMÓN: Hola, un gusto.
+
+YAGO: ¿Tú eres Noelia?
+
+YAGO: Yessica me ha hablado un montón de ti.
+
+YAGO: Y se quedó corta, la verdad.
+
+NOELIA: Eh… ja, ja.
+
+NOELIA: Gracias.
+
+NOELIA: Sonó medio raro…
+
+NOELIA: Pero bueno… son compas del trabajo de Yessi.
+
+NOELIA: Hay que ser amable.
+
+YESSICA: ¡Ya! ¡Un brindis por mi ascenso!
+
+// vasos brindando
+<<reproducir_sonido AudioYarnManager 10 0.5>>
+
+YESSICA: ¡SALUD!
+
+SIMÓN: Saluuuuuud.
+
+YAGO: ¡Salud!
+
+NOELIA: Salud.
+
+// musica
+<<detener_sonidos AudioYarnManager 0.5>>
+<<reproducir_sonido AudioYarnManager 11 20 true 1>>
+
+YESSICA: ¡Ay, quiero bailar!
+
+YESSICA: Vení Simón, ¡vamos a bailar!
+
+YAGO: ¿Y tú no bailas?
+
+NOELIA: No mucho, la verdad.
+
+YAGO: ¡Dale, si no sabes yo te enseño!
+
+// Estas opciones no aportan puntos de sí/no
+-> Un ratito…
+    NOELIA: … Solo un ratito.
+
+    // TRANSICIÓN CORTITA
+
+    NOELIA: ¡¿?!
+
+    NOELIA: Me está agarrando de la cintura…
+
+    NOELIA: Eh… ya, ya. Mejor me siento.
+
+    YAGO: ¿Pero que fue?
+
+    YAGO: ¿Te molestaste?
+
+    NOELIA: Sí…
+
+    NOELIA: No, sólo estoy cansada ya…
+
+-> No, gracias
+    NOELIA: No, gracias. No tengo ganas.
+
+    YAGO: ¡Pero si todos están bailando!
+
+    YAGO: Hasta Yessica está bailando.
+
+    NOELIA: Sí… pero estoy cansada.
+
+    NOELIA: Me dieron palo en el trabajo.
+
+    NOELIA: Además no quiero…
+
+YAGO: Ya, cansada pues…
+
+YAGO: Otra vez será.
+
+YAGO: Hey, ¿tienes novio?
+
+NOELIA: Eh… no.
+
+YAGO: ¡Pero cómo!
+
+YAGO: Si tú eres una chica tan guapa…
+
+YAGO: A mí me gustaría tener una novia como tú.
+
+NOELIA: ¡Yessi!
+
+NOELIA: Ni me mira. Está en su mundo.
+
+NOELIA: …
+
+NOELIA: Ya llevo un buen rato aquí… ¿y si mejor me voy?
+
+NOELIA: No…
+
+NOELIA: Hace mucho que no salgo.
+
+NOELIA: Yessi me invitó. Si me voy ahora, le arruino la noche.
+
+NOELIA: Un ratito más y me voy.
+
+// pasos
+<<reproducir_sonido AudioYarnManager 9 1>>
+
+YESSICA: ¡Lia, tengo que ir al baño!
+
+YESSICA: ¡Ya vengo!
+
+NOELIA: ¡Espera, voy contigo!
+
+YESSICA: ¡Son dos segunditos nomás!
+
+YESSICA: ¡Yago, cuídamela, ¿ok?!
+
+SIMÓN: Yo voy a la barra.
+
+// TAP-TAP-TAP-TAP - pasos apurados
+<<reproducir_sonido AudioYarnManager 12 1.5>>
+
+YAGO: Espérame un momento.
+
+YAGO: Ya vengo…
+
+// TAP TAP TAP - pasos normales
+<<reproducir_sonido AudioYarnManager 9 1>>
+
+YAGO: Toma. Es para ti.
+
+NOELIA: ¿Y eso?
+
+YAGO: Algo suavecito. Dulcito. Te va a gustar.
+
+NOELIA: …
+
+NOELIA: No, gracias. No tomo mucho.
+
+YAGO: Ay, vamos. Sólo uno.
+
+YAGO: No tiene casi alcohol.
+
+NOELIA: ¿Por qué insistes tanto?
+
+YAGO: Porque te veo incómoda.
+
+YAGO: Y un traguito te podría ayudar a relajarte.
+
+YAGO: Así la pasas bien como nosotros.
+
+YAGO: Sólo es eso.
+
+NOELIA: Tiene sentido…
+
+NOELIA: Pero no sé…
+
+NOELIA: No me gusta cómo insiste tanto.
+
+NOELIA: Y ni vi cuándo pidió el trago.
+
+NOELIA: … Pero a poco sólo estoy siendo desconfiada.
+
+NOELIA: Si le digo que no, se va a sentir raro.
+
+NOELIA: Además, Yessica está cerca, y ella le tiene confianza…
+
+YAGO: ¿Entonces? Es un traguito…
+
+// Vaso
+
+-> Aceptar el trago
+    <<set $contadorSi += 1>>
+    <<jump Escena3_Finales>>
+
+-> Rechazar el trago
+    // Suma 0 al contador (el "NO" es no sumar).
+    <<jump Escena3_Finales>>
+
+===
+
+title: Escena3_Finales
+---
+// Elige el final según los "sí" acumulados (escena 1 + 2 + 3 = de 0 a 3).
+<<detener_sonidos AudioYarnManager 1>>
+
+<<if $contadorSi >= 3>>
+    <<jump Final_3>>
+<<elseif $contadorSi == 2>>
+    <<jump Final_2>>
+<<elseif $contadorSi == 1>>
+    <<jump Final_1>>
+<<else>>
+    <<jump Final_0>>
+<<endif>>
+
+===
